@@ -30,6 +30,7 @@ class RegisteredApplicationsController < ApplicationController
   end
   
   def update
+    @registered_application = RegisteredApplication.find(params[:id])
     respond_to do |format|
       if @registered_application.update(registered_application_params)
         format.html { redirect_to @registered_application, notice: 'Registered application was successfully updated.' }
