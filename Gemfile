@@ -51,7 +51,8 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'groupdate'
+gem 'chartkick'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro', '1.0'
