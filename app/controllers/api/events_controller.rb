@@ -10,6 +10,11 @@
 
  
   def create
+    if request.method == "OPTIONS"
+     render :json => '', :content_type => 'application/json'
+     return
+    end
+    
     registered_application = RegisteredApplication.where(url: request.env['HTTP_ORIGIN']).try(:first)
     if registered_application.nil?
       render json: "Unregistered application", status: :unprocessable_entity
