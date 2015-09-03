@@ -6,7 +6,7 @@
   
     <%= pie_chart @registered_application.events.group(:name).count %>
   
-<!--   <line_chart @registered_application.events.group_by_day(:created_at).count> Cant run this line because it is not compatible with SQLite3 -->
+<%= line_chart @registered_application.events.group_by_day(:created_at).count %>
 
   
 </div>
