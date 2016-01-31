@@ -1,6 +1,14 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
 <div>
 	<h1 align="center"><%= @registered_application.name %></h1> 
 	<p align="center"><a href="<%= @registered_application.url %>"><%= @registered_application.url %></a></p> 
+  
+    <%= pie_chart @registered_application.events.group(:name).count %>
+  
+<%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+
+  
 </div>
 
 <%= link_to 'Edit This Application', edit_registered_application_path %> |
